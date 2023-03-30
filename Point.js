@@ -1,13 +1,14 @@
 export class Point {
-  constructor(x, y) {
+  constructor(index, x, y) {
     this.x = x;
     this.y = y;
-    this.speed = 0.05;
-    this.acc = 0;
-    this.range = Math.random() * 10;
+    this.originY = y;
+    this.speed = 0.01;
+    this.acc = index;
+    this.range = Math.random() * 150 + 150;
   }
   move() {
     this.acc += this.speed;
-    this.y += Math.sin(this.acc) * this.range;
+    this.y = this.originY + Math.sin(this.acc) * this.range;
   }
 }

@@ -7,7 +7,16 @@ class Canvas {
     this.canvas.style = "border: 1px solid black";
     document.body.appendChild(this.canvas);
     this.setSize();
-    this.wave = new Wave();
+    this.wave = new Wave(
+      this.canvas.width,
+      this.canvas.height,
+      "rgba(255,0,0,0.4)"
+    );
+    this.wave2 = new Wave(
+      this.canvas.width,
+      this.canvas.height,
+      "rgba(0,0,255,0.4)"
+    );
     this.animate.bind(this)();
   }
   setSize() {
@@ -18,6 +27,8 @@ class Canvas {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.wave.draw(this.ctx);
     this.wave.move();
+    this.wave2.draw(this.ctx);
+    this.wave2.move();
     requestAnimationFrame(this.animate.bind(this));
   }
 }
