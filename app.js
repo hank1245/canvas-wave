@@ -5,8 +5,10 @@ class Canvas {
     this.canvas = document.createElement("canvas");
     this.ctx = this.canvas.getContext("2d");
     this.canvas.style = "border: 1px solid black";
+    this.canvas.width = document.body.clientWidth;
+    this.canvas.height = document.body.clientHeight;
     document.body.appendChild(this.canvas);
-    this.setSize();
+
     this.wave = new Wave(
       this.canvas.width,
       this.canvas.height,
@@ -17,12 +19,10 @@ class Canvas {
       this.canvas.height,
       "rgba(0,0,255,0.4)"
     );
+
     this.animate.bind(this)();
   }
-  setSize() {
-    this.canvas.width = document.body.clientWidth;
-    this.canvas.height = document.body.clientHeight;
-  }
+
   animate() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.wave.draw(this.ctx);
