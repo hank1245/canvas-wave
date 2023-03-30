@@ -4,7 +4,6 @@ class Canvas {
   constructor() {
     this.canvas = document.createElement("canvas");
     this.ctx = this.canvas.getContext("2d");
-    this.canvas.style = "border: 1px solid black";
     this.canvas.width = document.body.clientWidth;
     this.canvas.height = document.body.clientHeight;
     document.body.appendChild(this.canvas);
