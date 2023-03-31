@@ -1,4 +1,6 @@
 import { Wave } from "./Wave.js";
+import { Ball } from "./Ball.js";
+import { Block } from "./Block.js";
 
 class Canvas {
   constructor() {
@@ -19,6 +21,9 @@ class Canvas {
       "rgba(0,0,255,0.4)"
     );
 
+    this.ball = new Ball(this.canvas.width, this.canvas.height, 20, 10);
+    this.block = new Block(340, 30, 100, 250);
+    this.block2 = new Block(340, 30, 500, 700);
     this.animate.bind(this)();
   }
 
@@ -28,6 +33,9 @@ class Canvas {
     this.wave.move();
     this.wave2.draw(this.ctx);
     this.wave2.move();
+    this.block.draw(this.ctx);
+    this.block2.draw(this.ctx);
+    this.ball.draw(this.ctx, this.block, this.block2);
     requestAnimationFrame(this.animate.bind(this));
   }
 }

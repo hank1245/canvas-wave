@@ -6,7 +6,7 @@ export class Point {
     this.speed = 0.02;
     this.randomness = 200;
     this.acc = index;
-    this.range = Math.random() * this.randomness + 100;
+    this.range = Math.random() * this.randomness + 10;
   }
   move() {
     this.acc += this.speed;

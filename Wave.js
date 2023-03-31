@@ -22,6 +22,7 @@ export class Wave {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.moveTo(this.points[0].x, this.points[0].y);
+
     let prevX = this.points[0].x;
     let prevY = this.points[0].y;
     for (let i = 1; i < this.numberOfPoints; i++) {
@@ -32,6 +33,7 @@ export class Wave {
       prevX = this.points[i].x;
       prevY = this.points[i].y;
     }
+
     //바닥부터 채우기
     ctx.lineTo(prevX, prevY);
     ctx.lineTo(this.width, this.height);
