@@ -5,6 +5,7 @@ export class Ball {
     this.vy = speed;
     this.stageWidth = stageWidth;
     this.stageHeight = stageHeight;
+    this.sinValue = 0;
     const diameter = this.radius * 2;
     this.x = diameter + (Math.random() * stageWidth - diameter);
     this.y = diameter + (Math.random() * stageHeight - diameter);
@@ -12,6 +13,8 @@ export class Ball {
   draw(ctx, block, block2) {
     this.x += this.vx;
     this.y += this.vy;
+    this.sinValue += 0.03;
+    this.radius += Math.sin(this.sinValue) * 0.7;
     this.bounceWindow(this.stageWidth, this.stageHeight);
     this.bounceBlock(block);
     this.bounceBlock(block2);

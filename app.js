@@ -21,7 +21,7 @@ class Canvas {
       "rgba(0,0,255,0.4)"
     );
 
-    this.ball = new Ball(this.canvas.width, this.canvas.height, 20, 10);
+    this.ball = new Ball(this.canvas.width, this.canvas.height, 20, 5);
     this.block = new Block(340, 30, 100, 250);
     this.block2 = new Block(340, 30, 500, 700);
     this.animate.bind(this)();
